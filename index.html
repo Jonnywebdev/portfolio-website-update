@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jonny Alteburg</title>
+
+    <!-- google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Chakra+Petch:wght@700&family=Oswald:wght@700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <!-- google fonts -->
+    <script src="script.js"></script>
+
+    <!-- JQurey -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.flipper').on('click', function() {
+                $(this).find('.flipper-card').toggleClass('flipper-is-flipped');
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="grid-container">
+
+        <div class="nav-container">
+            <nav class="nav">
+
+                <a href="">
+                    <li>Hem</li>
+                </a>
+                <a href="">
+                    <li>Om mig</li>
+                </a>
+                <a href="">
+                    <li>Portfolio</li>
+                </a>
+                <a href="">
+                    <li>Kontakt</li>
+                </a>
+
+            </nav>
+        </div>
+
+        <div class="textheader">
+            <h1>Jonny Altenburg</h1>
+            <h2>Web utvecklare</h2>
+            <h3>Med oändlig potential</h3>
+        </div>
+
+        <div class="svg">
+            <img src="wave3.svg" alt="my green wave svg">
+        </div>
+
+        <div class="footer">
+            <h4>Med erfarenhet av</h4>
+        </div>
+    </div>
+
+    <div class="grid-container2">
+        <div class="cards">
+
+            <div class="flipper">
+                <div class="flipper-card">
+                    <div class="flipper-front">Front</div>
+                    <div class="flipper-back">Back</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

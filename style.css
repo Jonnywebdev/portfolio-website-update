@@ -1,0 +1,158 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/* grid */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'header header header header header header' 'main main main main main main' 'main main main main main main' 'main main main main main main' 'svg svg svg svg svg svg' 'footer footer footer footer footer footer';
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* Navbar  */
+
+.nav-container {
+    background-color: rgb(10, 80, 85);
+    grid-area: header;
+}
+
+.nav {
+    background-color: rgb(10, 80, 85);
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: flex;
+    justify-content: right;
+    margin-right: 10vh;
+}
+
+nav a li {
+    list-style: none;
+    color: white;
+    margin: 10px;
+    font-family: 'Poppins', sans-serif;
+    font: bold;
+    margin-top: 14px;
+    font-size: 24px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+
+/* text headings */
+
+.textheader {
+    grid-area: main;
+    background-color: rgb(10, 80, 85);
+}
+
+.textheader h1 {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 100;
+    margin-left: 10vh;
+}
+
+.textheader h2 {
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    font-size: 72;
+    margin-left: 20vh;
+}
+
+.textheader h3 {
+    font-family: 'Big Shoulders Display', cursive;
+    color: rgb(255, 245, 0);
+    font-size: 64;
+    margin-left: 24vh;
+}
+
+.svg {
+    grid-area: svg;
+}
+
+.svg img {
+    width: 100%;
+    transform: rotate(180deg);
+    transform: scaleY(-1);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: white;
+    place-self: center;
+    font-size: 98;
+    color: rgb(10, 80, 85);
+}
+
+
+/* below are the next grid container with the cards */
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'header header header header header header' 'main main main main main main' 'main main main main main main' 'main main main main main main' 'svg svg svg svg svg svg' 'footer footer footer footer footer footer';
+    width: 100vw;
+    height: 100vh;
+}
+
+.flipper {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    -webkit-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+}
+
+@media (min-width: 576px) {
+    .ratio-not-1-1 {
+        padding-bottom: calc(50% - 5px);
+    }
+}
+
+.flipper-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.flipper-front,
+.flipper-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    background: #c1c3c5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flipper-back {
+    background: #fff;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flipper-card.flipper-is-flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
